@@ -1,0 +1,12 @@
+name: TelegramNotificationPUSH
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.chat_id }}
+        token: ${{ secrets.bot_token }}
+        args: ${{ github.event_name }} on ${{ github.repository }} by ${{ github.actor }} => ${{ job.status }}$
