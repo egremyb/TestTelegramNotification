@@ -9,4 +9,4 @@ jobs:
       with:
         to: ${{ secrets.chat_id }}
         token: ${{ secrets.bot_token }}
-        args: ${{ github.actor }} pushed on ${{ github.repository }} >> ${{ github.sha }}
+        args: ${{ github.actor }} pushed on ${{ github.repository }} >> ${{ github.ref }}
