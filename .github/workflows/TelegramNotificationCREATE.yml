@@ -9,4 +9,4 @@ jobs:
       with:
         to: ${{ secrets.chat_id }}
         token: ${{ secrets.bot_token }}
-        args: New branch ${{ github.ref }} created by ${{ github.actor }}
+        args: New branch ${{ github.ref }} created by ${{ github.actor }} on ${{ github.repository }}
