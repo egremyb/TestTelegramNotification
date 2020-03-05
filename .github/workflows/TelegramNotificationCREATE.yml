@@ -1,0 +1,12 @@
+name: TelegramNotificationCREATE
+on: [create]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.chat_id }}
+        token: ${{ secrets.bot_token }}
+        args: New branch ${{ github.ref }} created by ${{ github.actor }}
